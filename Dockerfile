@@ -20,4 +20,4 @@ COPY . .
 RUN npm run build
 
 # 컨테이너가 실행될 때 실행할 명령을 지정합니다.
-CMD [ "npm", "run", "build" ]
+CMD [ "npm", "run", "dev" ]
