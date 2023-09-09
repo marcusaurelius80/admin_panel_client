@@ -389,7 +389,7 @@ onMounted(async () => {
                 </div>
                 <!-- 성별 -->
                 <div class="radio-group">
-                    <label class="title">Sex(Optional)</label>
+                    <label class="title">Sex</label>
 
                     <div class="radio-inputs"> <!-- flex 에서 벗어나기 위한 div -->
                         <input class="input" id="radio-male-create" type="radio" name="sex" value="Male(남)"
@@ -407,7 +407,7 @@ onMounted(async () => {
                 </div>
                 <!-- 아동용/성인용 -->
                 <div class="radio-group">
-                    <label class="title">Usage(Optional)</label>
+                    <label class="title">Usage</label>
 
                     <div class="radio-inputs">
                         <input class="input" id="check-kid-create" type="radio" name="kid" value="true"
@@ -421,7 +421,7 @@ onMounted(async () => {
                 </div>
                 <!-- 판매 갯수 -->
                 <div class="input-group">
-                    <label class="title">Quantity(Optional)</label>
+                    <label class="title">Quantity</label>
                     <input class="input" type="number" min="1" v-model="inputQty">
                 </div>
                 <!-- 관련 브랜드 -->
@@ -463,7 +463,8 @@ onMounted(async () => {
                     </div>
                 </div>
                 <!-- 제품 등록 버튼 -->
-                <input class="button" type="submit" value="Create Product" :disabled="inputName?.length === 0">
+                <input class="button" type="submit" value="Create Product"
+                    :disabled="inputName?.length === 0 || selectedSexForCreate?.length === 0 || !selectedKidTypeForCreate || !inputQty">
             </form>
         </article>
 
